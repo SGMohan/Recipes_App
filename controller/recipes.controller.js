@@ -18,7 +18,7 @@ recipesRouter.post("/createRecipe", async (req, res) => {
     });
 }
 });
-//get all recipes
+//getAllRecipes
 recipesRouter.get("/", async (req, res) => {
   try {
     const result = await RecipeModel.find();
@@ -35,7 +35,7 @@ recipesRouter.get("/", async (req, res) => {
     });
   }
 });
-//get recipe by id
+//getRecipeById
 recipesRouter.get("/:id", async (req, res) => {
   try {
     const result = await RecipeModel.findById(req.params.id);
@@ -52,7 +52,7 @@ recipesRouter.get("/:id", async (req, res) => {
     });
   }
 });
-//update recipe by id
+//updateRecipe
 recipesRouter.put("/:id", async (req, res) => {
   try {
     const result = await RecipeModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -69,7 +69,7 @@ recipesRouter.put("/:id", async (req, res) => {
     });
   }
 });
-//delete recipe by id
+//deleteRecipe 
 recipesRouter.delete("/:id", async (req, res) => {
   try {
     const result = await RecipeModel.findByIdAndDelete(req.params.id);
