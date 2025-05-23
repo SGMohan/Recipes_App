@@ -1,7 +1,7 @@
 const express = require('express');
 express();
 require('dotenv').config();
-const { connectDB } = require("./config/db.js");
+const connectDB  = require("./config/db.js");
 connectDB;
 
 const recipesController = require("./controller/recipes.controller.js");
