@@ -2,7 +2,7 @@ const RecipeModel = require("../model/recipes.model");
 const recipesRouter = require("express").Router();
 
 //createRecipe
-recipesRouter.post("/createRecipe", async (req, res) => {
+recipesRouter.post("/", async (req, res) => {
   try {
     const result = await RecipeModel.create(req.body)
     return res.status(200).json({
