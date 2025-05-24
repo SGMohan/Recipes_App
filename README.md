@@ -49,12 +49,7 @@ A RESTful API for managing recipes built with **Node.js**, **Express**, and **Mo
 
 ### 📦 Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/SGMohan/Recipes_App.git
-cd Recipes_App
-```
-2. Install dependencies:
+1. Install dependencies:
 ```bash
 npm install
 ```
@@ -62,7 +57,7 @@ npm install
 ### ⚙️ Environment Configuration
 
 
-1. Create a .env file and add the following configuration
+2. Create a .env file and add the following configuration
 ```.env
 # Server Configuration
 PORT=3000
