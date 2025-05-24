@@ -78,7 +78,7 @@ npm start
 |-----------------------------------------------------------------------|----------------------------------|-----------------------|
 | ![GET](https://img.shields.io/badge/METHOD-GET-brightgreen)           | `/api/recipes`                   | Get all recipes       |
 | ![GET](https://img.shields.io/badge/METHOD-GET-brightgreen)           | `/api/recipes/:id`               | Get recipe by ID      |
-| ![POST](https://img.shields.io/badge/METHOD-POST-yellow)              | `/api/recipes/createRecipe`      | Create new recipe     |
+| ![POST](https://img.shields.io/badge/METHOD-POST-yellow)              | `/api/recipes/`                  | Create new recipe     |
 | ![PUT](https://img.shields.io/badge/METHOD-PUT-blue)                  | `/api/recipes/:id`               | Update recipe         |
 | ![DELETE](https://img.shields.io/badge/METHOD-DELETE-red)             | `/api/recipes/:id`               | Delete recipe         |
 
