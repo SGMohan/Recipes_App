@@ -13,7 +13,7 @@ app.listen(process.env.PORT, process.env.HOSTNAME, function() {
 
 app.get("/", (req, res) => {
     return res.status(200).json({
-        message: "API created",
+        message: "Welcome to the Recipe API",
         success: true
     })
 })
