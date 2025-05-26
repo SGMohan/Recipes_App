@@ -123,5 +123,5 @@ Configured in Render Dashboard:
 ```env
 PORT=10000
 MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/recipes
-NODE_ENV=production
+NODE_ENV=development
 ```
