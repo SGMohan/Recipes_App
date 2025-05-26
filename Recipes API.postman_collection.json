@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "c17ccac6-dcc4-4103-92b2-5b4302b301c8",
+		"name": "Recipes API",
+		"description": "# **Recipes API - Comprehensive Documentation**\n\n## **Overview**\n\nThis API provides **CRUD (Create, Read, Update, Delete)** operations for managing Indian recipes. It supports both **local development (**LocalhostUrl**)** and a **deployed version (**DeployedURL**)**.\n\n## **Base URLs**\n\n1. Localhost : [http://localhost:3000/recipes](http://localhost:3000/recipes)\n    \n2. DeployedURL : [https://recipes-app-6d9j.onrender.com/recipes](https://recipes-app-6d9j.onrender.com/recipes)\n    \n\n---\n\n## **Authentication**\n\n🔓 **No authentication required** – This is an open API for testing.\n\n---\n\n## **Sample Recipes (Preloaded Data)**\n\n| Recipe ID | Name | Description | Cooking Time |\n| --- | --- | --- | --- |\n| 1 | Vegetable Pulao | Fragrant rice with mixed veggies. | 30 mins |\n| 2 | Sambar | South Indian lentil stew. | 40 mins |\n| 3 | Butter Chicken | Creamy tomato-based chicken curry. | 50 mins |\n| ... | ... | ... | ... |\n\n\\*(Full list includes **15+ Indian dishes** like Chole Bhature, Masala Dosa, Biryani, etc.)\\*\n\n---\n\n## **Error Handling**\n\n| Status Code | Error Message | Possible Reason |\n| --- | --- | --- |\n| `400` | Bad Request | Invalid JSON / Missing fields |\n| `404` | Not Found | Recipe ID does not exist |\n| `500` | Internal Server Error | Backend issue |\n\n---\n\n## **Testing in Postman**\n\n1. **Import** the provided `Recipes API.postman_collection.json`.\n    \n2. Update environment variables if needed (`localhost` vs. deployed URL).\n    \n3. Test endpoints sequentially (Create → Read → Update → Delete).\n    \n\n---\n\n## **Deployment Notes**\n\n- **Local:** Runs on `http://localhost:3000`.\n    \n- **Cloud (Render):** Accessible at `https://recipes-app-6d9j.onrender.com`.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41342583"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				},
+				"description": "### **1\\. 📜 Get All Recipes**\n\n**Method:** `GET`  \n**Endpoint:** `/recipes`  \n**Description:** Retrieves a list of all available recipes.\n\n#### **Example Request:**\n\n``` json\nGET http://localhost:3000/recipes\n\n ```\n\n#### **Example Response (200 OK):**\n\n``` json\n[\n  {\n    \"recipe_id\": 1,\n    \"name\": \"Vegetable Pulao\",\n    \"description\": \"Fragrant rice cooked with mixed vegetables and spices.\",\n    \"ingredients\": [\"basmati rice\", \"carrot\", \"peas\", \"beans\", \"garam masala\"],\n    \"cookingTime\": 30\n  },\n  // ... (more recipes)\n]\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"recipe_id\": 1,\r\n    \"name\": \"Vegetable Pulao\",\r\n    \"description\": \"Fragrant rice cooked with mixed vegetables and spices.\",\r\n    \"ingredients\": [\"basmati rice\", \"carrot\", \"peas\", \"beans\", \"garam masala\"],\r\n    \"cookingTime\": 30\r\n  },\r\n  {\r\n    \"recipe_id\": 2,\r\n    \"name\": \"Sambar\",\r\n    \"description\": \"South Indian lentil stew made with vegetables and tamarind.\",\r\n    \"ingredients\": [\"toor dal\", \"tamarind\", \"drumstick\", \"sambar powder\", \"mustard seeds\"],\r\n    \"cookingTime\": 40\r\n  },\r\n  {\r\n    \"recipe_id\": 3,\r\n    \"name\": \"Butter Chicken\",\r\n    \"description\": \"Creamy tomato-based chicken curry with a buttery flavor.\",\r\n    \"ingredients\": [\"chicken\", \"butter\", \"tomato puree\", \"cream\", \"kasuri methi\"],\r\n    \"cookingTime\": 50\r\n  },\r\n  {\r\n    \"recipe_id\": 4,\r\n    \"name\": \"Poori Masala\",\r\n    \"description\": \"Fluffy deep-fried wheat bread served with potato masala.\",\r\n    \"ingredients\": [\"wheat flour\", \"potato\", \"onion\", \"turmeric\", \"green chili\"],\r\n    \"cookingTime\": 25\r\n  },\r\n  {\r\n    \"recipe_id\": 5,\r\n    \"name\": \"Kadai Paneer\",\r\n    \"description\": \"Paneer cooked in a spicy onion-tomato gravy with bell peppers.\",\r\n    \"ingredients\": [\"paneer\", \"capsicum\", \"onion\", \"tomato\", \"kadai masala\"],\r\n    \"cookingTime\": 35\r\n  },\r\n  {\r\n    \"recipe_id\": 6,\r\n    \"name\": \"Paneer Butter Masala\",\r\n    \"description\": \"A rich and creamy tomato-based curry with paneer cubes.\",\r\n    \"ingredients\": [\"paneer\", \"tomato\", \"butter\", \"cream\", \"garam masala\"],\r\n    \"cookingTime\": 30\r\n  },\r\n  {\r\n    \"recipe_id\": 7,\r\n    \"name\": \"Chole Bhature\",\r\n    \"description\": \"Spicy chickpeas curry served with deep-fried bread.\",\r\n    \"ingredients\": [\"chickpeas\", \"onion\", \"tomato\", \"spices\", \"flour\"],\r\n    \"cookingTime\": 45\r\n  },\r\n  {\r\n    \"recipe_id\": 8,\r\n    \"name\": \"Masala Dosa\",\r\n    \"description\": \"Crispy rice crepe filled with spicy potato filling.\",\r\n    \"ingredients\": [\"rice\", \"urad dal\", \"potato\", \"mustard seeds\", \"curry leaves\"],\r\n    \"cookingTime\": 35\r\n  },\r\n  {\r\n    \"recipe_id\": 9,\r\n    \"name\": \"Chicken Biryani\",\r\n    \"description\": \"Aromatic basmati rice layered with marinated chicken.\",\r\n    \"ingredients\": [\"chicken\", \"basmati rice\", \"yogurt\", \"onion\", \"biryani masala\"],\r\n    \"cookingTime\": 60\r\n  },\r\n  {\r\n    \"recipe_id\": 10,\r\n    \"name\": \"Rajma Chawal\",\r\n    \"description\": \"Kidney beans curry served with steamed rice.\",\r\n    \"ingredients\": [\"rajma\", \"onion\", \"tomato\", \"garlic\", \"cumin\"],\r\n    \"cookingTime\": 40\r\n  },\r\n  {\r\n    \"recipe_id\": 11,\r\n    \"name\": \"Baingan Bharta\",\r\n    \"description\": \"Smoky roasted eggplant mashed and cooked with spices.\",\r\n    \"ingredients\": [\"eggplant\", \"tomato\", \"onion\", \"garlic\", \"green chili\"],\r\n    \"cookingTime\": 30\r\n  },\r\n  {\r\n    \"recipe_id\": 12,\r\n    \"name\": \"Aloo Paratha\",\r\n    \"description\": \"Stuffed Indian flatbread with spiced mashed potatoes.\",\r\n    \"ingredients\": [\"wheat flour\", \"potato\", \"green chili\", \"coriander\", \"ghee\"],\r\n    \"cookingTime\": 25\r\n  },\r\n  {\r\n    \"recipe_id\": 13,\r\n    \"name\": \"Tandoori Chicken\",\r\n    \"description\": \"Chicken marinated in yogurt and spices, grilled to perfection.\",\r\n    \"ingredients\": [\"chicken\", \"yogurt\", \"lemon juice\", \"red chili powder\", \"garam masala\"],\r\n    \"cookingTime\": 50\r\n  },\r\n  {\r\n    \"recipe_id\": 14,\r\n    \"name\": \"Palak Paneer\",\r\n    \"description\": \"Cottage cheese cubes cooked in a creamy spinach gravy.\",\r\n    \"ingredients\": [\"spinach\", \"paneer\", \"onion\", \"garlic\", \"cream\"],\r\n    \"cookingTime\": 30\r\n  },\r\n  {\r\n    \"recipe_id\": 15,\r\n    \"name\": \"Idli Sambar\",\r\n    \"description\": \"Soft rice cakes served with spicy lentil soup.\",\r\n    \"ingredients\": [\"rice\", \"urad dal\", \"toor dal\", \"vegetables\", \"sambar powder\"],\r\n    \"cookingTime\": 40\r\n  }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/createRecipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"createRecipe"
+					]
+				},
+				"description": "StartFragment\n\n### **2\\. ➕ Create New Recipe(s)**\n\n**Method:** `POST`  \n**Endpoint:** `/recipes/createRecipe`  \n**Description:** Adds one or multiple new recipes.\n\n#### **Example Request:**\n\n``` json\nPOST http://localhost:3000/recipes/createRecipe\n\n ```\n\n#### **Request Body (JSON):**\n\n``` json\n[\n  {\n    \"recipe_id\": 16,\n    \"name\": \"Vegetable Rice\",\n    \"description\": \"Fragrant rice with mixed vegetables.\",\n    \"ingredients\": [\"basmati rice\", \"carrot\", \"peas\", \"beans\", \"garam masala\"],\n    \"cookingTime\": 30\n  }\n]\n\n ```\n\n#### **Response (201 Created):**\n\n```\n{\n  \"status\": \"success\",\n  \"message\": \"Recipes added successfully\",\n  \"data\": [\n    {\n      \"recipe_id\": 16,\n      \"name\": \"Vegetable Rice\",\n      // ... (other fields)\n    }\n  ]\n}\n\n\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/68304f3d5feed54b68a32a64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"68304f3d5feed54b68a32a64"
+					]
+				},
+				"description": "### **3\\. 🔍 Get Recipe by ID**\n\n**Method:** `GET`  \n**Endpoint:** `/recipes/:id`  \n**Description:** Fetches a single recipe by its unique ID.\n\n#### **Example Request:**\n\n```\nGET http://localhost:3000/recipes/68304f3d5feed54b68a32a64\n\n ```\n\n#### **Response (200 OK):**\n\n```\n{\n  \"recipe_id\": 1,\n  \"name\": \"Vegetable Pulao\",\n  \"description\": \"Fragrant rice cooked with mixed vegetables and spices.\",\n  \"ingredients\": [\"basmati rice\", \"carrot\", \"peas\", \"beans\", \"garam masala\"],\n  \"cookingTime\": 30\n}\n\n ```\n\n#### **Error Cases:**\n\n- `404 Not Found` – If the recipe ID does not exist."
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/68304f3d5feed54b68a32a64",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"68304f3d5feed54b68a32a64"
+					]
+				},
+				"description": "### **4\\. ✏️ Update Recipe**\n\n**Method:** `PUT`  \n**Endpoint:** `/recipes/:id`  \n**Description:** Modifies an existing recipe.\n\n#### **Example Request:**\n\n``` json\nPUT http://localhost:3000/recipes/68304f3d5feed54b68a32a64\n\n ```\n\n#### **Request Body (JSON):**\n\njsonCopyDownload\n\n```\n{\n  \"name\": \"Spicy Vegetable Pulao\",\n  \"cookingTime\": 35\n}\n\n ```\n\n#### **Response (200 OK):**\n\n```\n{\n  \"status\": \"success\",\n  \"message\": \"Recipe updated successfully\"\n}\n\n ```\n\n#### **Error Cases:**\n\n- `400 Bad Request` – Invalid data format.\n    \n- `404 Not Found` – Recipe ID not found."
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipe_id\": 16,\r\n    \"name\": \"Vegetable Rice\",\r\n    \"description\": \"Fragrant rice cooked with mixed vegetables and spices.\",\r\n    \"ingredients\": [\"basmati rice\", \"carrot\", \"peas\", \"beans\", \"garam masala\",\"potatos\"],\r\n    \"cookingTime\": 30\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recipes-app-6d9j.onrender.com/recipes/6831706a323e5646218ad271",
+					"protocol": "https",
+					"host": [
+						"recipes-app-6d9j",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"recipes",
+						"6831706a323e5646218ad271"
+					]
+				},
+				"description": "### **5\\. ❌ Delete Recipe**\n\n**Method:** `DELETE`  \n**Endpoint:** `/recipes/:id`  \n**Description:** Removes a recipe by ID.\n\n#### **Example Request:**\n\n```\nDELETE http://localhost:3000/recipes/682f3e35334dc52fd5a60503\n\n ```\n\n#### **Response (200 OK):**\n\n``` json\n{\n  \"status\": \"success\",\n  \"message\": \"Recipe deleted successfully\"\n}\n\n ```\n\n#### **Error Cases:**\n\n- `404 Not Found` – Recipe ID does not exist."
+			},
+			"response": []
+		}
+	]
+}
