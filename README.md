@@ -71,8 +71,8 @@ MONGO_URI=mongodb://localhost:27017/recipes
 npm start
 ```
 
-### 🧾 Recipe Endpoints
-
+### 🧾 Postman Documentaion - https://documenter.getpostman.com/view/41342583/2sB2qdeyzX 
+### 🧾 Recipes Endpoints 
 
 | Method                                                                | Endpoint                         | Description           |
 |-----------------------------------------------------------------------|----------------------------------|-----------------------|
