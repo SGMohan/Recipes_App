@@ -92,9 +92,9 @@ Recipes_App/
 ├── config/
 │   └── db.js
 ├── models/
-│   └── Recipe.js
+│   └── recipe.model.js
 ├── controllers/
-│   └── recipeController.js
+│   └── recipe.controller.js
 ├── .env
 ├── .gitignore
 ├── index.js
